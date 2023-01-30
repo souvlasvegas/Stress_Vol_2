@@ -62,16 +62,19 @@ class window_independent_samples_t_test(tk.Tk):
         self.button2 = ttk.Button(self,text="Choose biomarkers", command=self.choose_biomarkers)
         self.button2.pack()
         
-        self.button3 = ttk.Button(self, text="Run T-TEST", command=self.run_test_clicked)
+        self.button3 = ttk.Button(self, text="print biomarkers", command=self.print_biomarkers)
         self.button3.pack()
         
-        self.button4 = ttk.Button(self, text="print biomarkers", command=self.print_biomarkers)
+        self.button4 = ttk.Button(self, text="Run T-TEST", command=self.run_test_clicked)
         self.button4.pack()
+        
         
         self.console = tk.Text(self)
         self.console.pack(fill=tk.BOTH,expand=True)
         self.console.insert("end","1) Press the <Choose Save> button and pick a txt file to save the results.\n You should keep this txt file closed throughout the execution")
-        self.console.insert("end","\n2) Press the <Run T-Test> button and choose exactly 2 .set files (one calm and one stressed) of the same subject")
+        self.console.insert("end","\n2) Press <Choose Biomarkers> choose which biomarkers you want to check, then press Ok")
+        self.console.insert("end","\n3) Press the <Run T-Test> button and choose exactly 2 .set files (one calm and one stressed) of the same subject")
+        self.console.insert("end","\n4) When ready, close the app and check the .txt file")
     
     def on_closing(self):
         self.destroy()
